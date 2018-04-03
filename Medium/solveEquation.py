@@ -53,7 +53,7 @@ class Solution:
             return "No solution"
         if x == 0 and n == 0:
             return "Infinite solutions"
-        return "{}x={}".format("" if x > 0 else "-", int(-n))
+        return "x={}".format(int(-n))
         
         # time complexity O(N)
         
