@@ -14,8 +14,8 @@ Clarification Questions:
 - if n == 0, is result == 0? ____>>> NO, it will be 1!
 
 Approach:
-sum previous two: 
-i.e. climb(N) = climb(N-1) + climb(N-2)
+sum previous two: i.e. climb(N) = climb(N-1) + climb(N-2)
+special cases if n == 2, 1, or 0
 
 """
     
