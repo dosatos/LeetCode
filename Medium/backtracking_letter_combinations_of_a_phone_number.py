@@ -25,14 +25,17 @@ can a number re-appear again in this string (to be there more than 1 time)?
 what happens if 1 is there? treat is as None? and Zero is ' ' (space) <<< 1 and 0 cannot be in the string. if so, return []
 
 Test cases:
-23
+123
 111
 ""
 1
-0
-789
-7
-9
+2
+12
+21
+221
+321
+123
+213
 
 Approach:
 make the mapping of a number (in str format) to letters using a dict. Key: a number, Values: a tuple of letters
@@ -42,8 +45,6 @@ recursively concatenate to the current level letters the concatenated letters of
 At the last level:
     check if current level is the last level (check if something left afterwards)
     return the letters of this level in a list
-
-Complexity O(3^n)
 
 """
 
@@ -87,4 +88,16 @@ class Solution:
         if digits == "" or "1" in digits or "0" in digits:
             return []
         return self.recursive_sol(digits, 0, dl_map)
+    
+    ### Version 2, using itertools.product(*[])
+#     def letterCombinations(self, digits):
+#         """
+#         :type digits: str
+#         :rtype: List[str]
+#         """
+#         if not digits:
+#             return []
+#         mapping = {'0':'', '1':'', '2':'abc', '3':'def', '4':'ghi', '5':'jkl', '6':'mno', '7':'pqrs', '8':'tuv', '9':'wxyz'}
+#         groups = [mapping[d] for d in digits if d != '0' and d != '1']
+#         return [''.join(x) for x in itertools.product(*groups)]
         
