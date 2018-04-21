@@ -43,6 +43,8 @@ At the last level:
     check if current level is the last level (check if something left afterwards)
     return the letters of this level in a list
 
+Complexity O(3^n)
+
 """
 
 class Solution:
