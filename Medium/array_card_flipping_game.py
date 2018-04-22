@@ -44,6 +44,7 @@ Also, we have to create an array of 'forbidden' numbers: to store numbers that a
 
 then find min of the 'candidates'
 
+Complexity: O(N)
 
 """
 class Solution:
