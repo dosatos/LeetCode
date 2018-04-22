@@ -71,4 +71,7 @@ class Solution:
         if candidates:
             return min(candidates.keys())
         return 0
-        
+
+    # def flipgame(self, f, b):
+    #     same = {x for x, y in zip(f, b) if x == y}
+    #     return min([i for i in f + b if i not in same] or [0])
