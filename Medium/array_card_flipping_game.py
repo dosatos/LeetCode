@@ -54,7 +54,7 @@ class Solution:
         :type backs: List[int]
         :rtype: int
         """
-        forbidden = []
+        forbidden = {}
         candidates = {}
         for i in range(len(fronts)):
             f = fronts[i]
@@ -65,7 +65,7 @@ class Solution:
                 if b not in forbidden:
                     candidates[b] = 1
             else:
-                forbidden.append(f)
+                forbidden[f] = 1
                 if f in candidates:
                     del candidates[f]
         if candidates:
