@@ -37,12 +37,12 @@ class Solution:
         # if x==0 and n==0 on the other - infinite
         # if x==0 and a constant on the other - no solution
         # if x on one side, and a constant on the other - solution
-        
+ 
         # test: 2-x+2x-x-x+1=x
         # test2: "x+5-3+x=6+x-2"
         # test2: "+5-3+x=6+x-2"
         # -x=-1
-        
+
         left, right = equation.split("=")
         x1, n1 = self.calc(left) # O(leftN)
         x2, n2 = self.calc(right) # O(rightN)
@@ -54,6 +54,6 @@ class Solution:
         if x == 0 and n == 0:
             return "Infinite solutions"
         return "x={}".format(int(-n))
-        
         # time complexity O(N)
-        
+
+
