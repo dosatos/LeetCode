@@ -71,9 +71,31 @@ class Solution:
 #         else:
 #             l2.next = self.mergeTwoLists(l2.next, l1)
 #             return l2
-    def mergeTwoLists(self, a, b):
-        if not a or b and a.val > b.val:
-            a, b = b, a
-        if a:
-            a.next = self.mergeTwoLists(a.next, b)
-        return a
+    # def mergeTwoLists(self, a, b):
+    #     if not a or b and a.val > b.val:
+    #         a, b = b, a
+    #     if a:
+    #         a.next = self.mergeTwoLists(a.next, b)
+    #     return a
+    def mergeTwoLists(self, l1, l2):
+        """
+        :type l1: ListNode
+        :type l2: ListNode
+        :rtype: ListNode
+        """
+        if not l1: return l2
+        if not l2: return l1
+        if l1.val < l2.val:
+            l3, l1 = l1, l1.next
+        else:
+            l3, l2 = l2, l2.next
+        
+        cur = l3
+        while l1 and l2:
+            if l1.val < l2.val:
+                cur.next, l1 = l1, l1.next
+            else:
+                cur.next, l2 = l2, l2.next
+            cur = cur.next
+        cur.next = l1 if l1 else l2
+        return l3
